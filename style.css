@@ -1,0 +1,48 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html, body {
+  width: 100%;
+  height: 100%;
+}
+
+main {
+  width: 100vw;
+  height: 100vh;
+  background-color: #1f1f1f;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+main section {
+  height: 60vh;
+  width: 25vw;
+  background-color: #f8f8f8;
+  border-radius: 7px;
+  text-align: center;
+}
+main section h1 {
+  font-size: 150px;
+  margin-top: 70px;
+}
+main section button {
+  padding: 8px 15px;
+  border-radius: 5px;
+  font-size: 20px;
+  font-weight: 700;
+}
+main section #inc {
+  background-color: #1f1f1f;
+  color: #f8f8f8;
+}
+main section #reset {
+  border: 2px solid #1f1f1f;
+  color: #1f1f1f;
+}
+main section #dec {
+  background-color: #1f1f1f;
+  color: #f8f8f8;
+}/*# sourceMappingURL=style.css.map */
