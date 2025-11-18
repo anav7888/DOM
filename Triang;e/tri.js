@@ -12,6 +12,7 @@ btn.addEventListener('click',function(){
     var x = Math.random()*90
     var y = Math.random()*90
     var rot = Math.random()*360
+    var scl = Math.random()*2
     var div = document.createElement("div")
 
     main.appendChild(div)
@@ -25,5 +26,6 @@ btn.addEventListener('click',function(){
     div.style.left = x+"%"
     div.style.top = y+"%"
     div.style.rotate = rot+"deg"
+    div.style.scale = scl
 })
 
