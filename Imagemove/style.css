@@ -41,5 +41,6 @@ main .hover img {
   position: absolute;
   opacity: 0;
   scale: 0;
-  transition: all ease 0.1;
+  transition: all ease 0.3;
+  position: fixed;
 }/*# sourceMappingURL=style.css.map */
