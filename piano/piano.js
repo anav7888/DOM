@@ -29,5 +29,12 @@ key.forEach(function(elem){
  })
  
 })
+document.addEventListener("keydown", function(event){
+   let keypress = event.key.toLowerCase();
+   if(sound[keypress]){
+    let audio = new Audio(sound[keypress])
+    audio.play()
+   }
+});
 
 
