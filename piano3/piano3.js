@@ -32,36 +32,43 @@ let sound = {
     "7" : "./piano/7.mp3",
     "8" : "./piano/8.mp3",
     "9" : "./piano/9.mp3",
+};
 
+
+// ===== PLAY SOUND FUNCTION =====
+function playSound(key) {
+    key = key.toLowerCase();
+
+    if (sound[key]) {
+        let audio = new Audio(sound[key]);
+        audio.play();
+    }
+
+    // ADD ANIMATION
+    let keyButton = [...document.querySelectorAll(".key")]
+        .find(btn => btn.innerHTML.toLowerCase() === key);
+
+    if (!keyButton) return;
+
+    keyButton.classList.add("active");
+
+    setTimeout(() => {
+        keyButton.classList.remove("active");
+    }, 150);
 }
 
-// var key = document.querySelectorAll(".key")
-// key.forEach(function(elem){
-// elem.addEventListener('click',function(){
-//     var text = elem.innerHTML.toLowerCase()
-//     var audio = new Audio(sound[text])
-//     audio.play()
-// })
-// })
 
-// document.addEventListener('keydown',function(event){
-//     var data = event.key.toLowerCase()
-//     var audios = new Audio(sound[data])
-//     audios.play()
-   
-// })
+// ===== CLICK TO PLAY =====
+document.querySelectorAll(".key").forEach(function(elem){
+    elem.addEventListener("click", function(){
+        let text = elem.innerHTML.toLowerCase();
+        playSound(text);
+    });
+});
 
-var key = document.querySelectorAll(".key")
-key.forEach(function(elem){
-    elem.addEventListener('click',function(){
-        var keys = elem.innerHTML.toLowerCase()
-    var audio = new Audio(sound[keys])
-    audio.play()
-    })
-})
 
-document.addEventListener('keydown',function(event){
-    var keyword = event.key.toLowerCase()
-    var audios = new Audio(sound[keyword])
-    audios.play()
-})
+// ===== KEYBOARD PRESS =====
+document.addEventListener("keydown", function(event){
+    let key = event.key.toLowerCase();
+    playSound(key);
+});
