@@ -32,6 +32,7 @@ main video{
 .spotlight{
     width: 100%;
     height: 100%;
-    background:radial-gradient( 150px 140px ellipse at var(--x) var(--y)  ,rgba(25, 25, 25, 0.007) 30% ,rgba(15, 15, 15, 0.862) 100%  );
+    background:radial-gradient( 150px 140px ellipse at var(--x) var(--y)  ,rgba(25, 25, 25, 0.007)  ,rgba(15, 15, 15, 0.91)  );
     position: absolute;
+    z-index: 9;
 }
