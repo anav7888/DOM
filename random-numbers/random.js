@@ -2,24 +2,21 @@ var main = document.querySelector("main")
 var letter = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz"
 var h1 = document.querySelector("h1")
 var innerh1 = h1.innerHTML
+var count = 0
 
+h1.addEventListener('mouseenter',function(){
+    function random(){
+        var arr =  innerh1.split("").map((char,idx)=>{
+            // console.log(char,idx)
+            if(idx<count){
+                return char
+            }
+          return letter.split("")[Math.floor(Math.random()*53)]
+        }).join("").toUpperCase()
+       h1.innerHTML = arr
+       count += 0.5
+      
+     }
 
-h1.addEventListener('mouseenter',()=>{
-    let count = 0;
-    var intervl = setInterval(()=>{
-    var arr = innerh1.split("").map((elem,idx)=>{
-        return letter.split("")[Math.floor(Math.random()*53)]
-    }).join("")
-    
-    h1.innerHTML = arr
-    
-   },30)
-
-
-   setTimeout(()=>{
-    clearInterval(intervl)
-    h1.innerHTML = innerh1
-   },300)
-    
- 
+     setInterval(random,60)
 })
